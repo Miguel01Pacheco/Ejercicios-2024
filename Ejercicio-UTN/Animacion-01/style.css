@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh; 
+    background-image: url(./imagenes/montañas.webp.webp);
+    background-size: cover;
+    position: relative;
+}
+/* Define la animación */
+@keyframes moverImagen {
+    /* La imagen empieza a la izquierda fuera del viewport */
+    0% {
+        transform: translateX(-100%); 
+    /* La imagen se traslada 50% hacia la derecha */
+    }
+    50% {
+        transform: translateX(300%); 
+    }
+    100% {
+    /* La imagen sale del viewport por la derecha */
+        transform: translateX(700%); 
+    }
+}
+
+/* Aplica la animación a la imagen */
+img {
+    position: absolute;
+    top: 100px;
+    left: -100px;
+    animation: moverImagen 5s infinite; 
+}
