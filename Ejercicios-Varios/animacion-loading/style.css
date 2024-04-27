@@ -1,0 +1,109 @@
+body {
+    background-color: white;
+    position: relative;
+    display: flex;
+    height: 100vh;
+    
+
+}
+/* defino la animación*/
+@keyframes transicion {
+    from { opacity : 0; background-color: lightblue;
+    }
+    to { opacity: 1; background-color: blue;
+    }
+    }
+
+.uno {
+text-align: center;
+background-color: lightblue;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+position: absolute;
+top: 50%;
+left: 25%;
+animation:transicion;
+animation-duration: 1s;
+animation-direction: alternate-reverse;
+animation-iteration-count: infinite;
+/* nombre de la animacion-duración-tipo de iteración- */
+}
+.dos {
+text-align: center;
+background-color: lightblue;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+position: absolute;
+top: 32%;
+left: 32%;
+animation:transicion 1s alternate-reverse infinite  128ms;
+}
+.tres {
+text-align: center;
+text-justify: auto;
+background-color :lightblue;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+position: absolute;
+top: 25%;
+left: 50%;
+animation:transicion 1s alternate-reverse infinite  253ms;
+}
+.cuatro {
+text-align: center;
+background-color:lightblue;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+position: absolute;
+top: 32%;
+left: 68%;
+animation:transicion 1s alternate-reverse infinite 378ms ;
+}
+.cinco {
+    text-align: center;
+    background-color: lightblue;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    animation:transicion 1s alternate-reverse infinite 493ms ;
+    }
+.seis{
+text-align: center;
+    background-color: lightblue;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 68%;
+    left: 68%;
+     animation:transicion 1s alternate-reverse infinite 608ms ;
+        }
+.siete {
+            text-align: center;
+            background-color:lightblue;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            animation:transicion 1s alternate-reverse infinite 733ms ;
+            }
+.ocho {
+    text-align: center;
+    background-color: lightblue;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 68%;
+    left: 32%;
+    animation:transicion 1s alternate-reverse infinite 858ms ;
+    }
