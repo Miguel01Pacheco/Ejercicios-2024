@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  #cont{
+    margin:10vh auto;
+    background-color: red;
+    height: 70vh;
+    width:max-content;
+    display: grid;
+    padding: 0 5%;
+    gap: 15px;
+    grid-template-columns: repeat( 5,1fr);
+    grid-template-rows: repeat (4 ,1fr);
+  }#display,
+  #one ,#two, #three, #four, #five ,#six ,#seven,
+  #eigth ,#nine ,#zero, #suma, #resta, #multiplicacion,
+   #igual ,#division ,#pop {
+    width: 50px;
+    height: 50px;
+    background-color: orangered;
+     
+  }
+  #display {
+    background-color: coral;
+    grid-column: 1/6;
+    width: 90%;
+    margin: auto;
+  }
+  #one {
+    grid-scolumn: 1/2;
+    grid-row: 2/3;
+  }
+  #seven {
+    grid-column:1/2;
+  }
+  #zero {
+    grid-column: 1/2;
+  }
+  #igual{
+    grid-column: 2/4;
+    width:100%;
+  }
+  #suma, #resta, #multiplicacion, #division{
+    grid-column:5/6;
+  }
