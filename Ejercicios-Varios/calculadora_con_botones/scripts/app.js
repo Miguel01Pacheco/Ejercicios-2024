@@ -21,29 +21,108 @@ const $igual = document.getElementById("igual");
 //y los que funcionan como swicht para los while.
 const numero1 =[];
 const numero2 =[];
-const primerBucle = [true];
-const segundoBucle = [true];
+const primerNumero = true;
+const segundoNumero = false;
+const operacion = "+";
+const resultado = [];
+
 //Funcion calcular
-function calcular(num1,num2,operacion){
-    if(operacion === "+"){
+function calcular(num1,num2,op){
+    if(op === "+"){
         return num1 + num2 ;
-    }else if (operacion === "-"){
+    }else if (op === "-"){
         return num1 - num2 ;
-    }else if (operacion === "*"){
+    }else if (op === "*"){
         return num1 * num2 ;
-    }else if (operacion === "÷"){
+    }else if (op === "/"){
         return num1 / num2 ;
     }
 };
 
-    
+ //Escucho todos los numeros y los ingreso en un array segun corresponda, 1 o 2.   
     $uno.addEventListener("click", (e)=>{
-        numero1.push("1");
+        if(primerNumero){
+        numero1.push(1);
+        }else if (segundoNumero){
+        numero2.push(1);}
     });
-    $suma.addEventListener("click", (e)=>{
-        primerBucle[0] =false;
+    ;$dos.addEventListener("click", (e)=>{
+        if(primerNumero){
+        numero1.push(2);
+        }else if(segundoNumero){
+        numero2.push(2);    
+        }
+    });$tres.addEventListener("click", (e)=>{
+        if(primerNumero){
+        numero1.push(3);
+        }else if (segundoNumero){
+        numero2.push(3);    
+        }
+    });$cuatro.addEventListener("click", (e)=>{
+        if(primerNumero){
+        numero1.push(4);
+        }else if (segundoNumero){
+        numero2.push(4);    
+        }
+    });$cinco.addEventListener("click", (e)=>{
+        if (primerNumero){
+            numero1.push(5);
+        }else if (segundoNumero){
+        numero2.push(5);    
+        }   
+    });$seis.addEventListener("click", (e)=>{
+        if (primerNumero){
+        numero1.push(6);
+        }else if (segundoNumero){
+        numero2.push(6);    
+        }
+    });$siete.addEventListener("click", (e)=>{
+        if (primerNumero){
+        numero1.push(7);
+        }else if (segundoNumero){
+        numero2.push(7);    
+        }
+    });$ocho.addEventListener("click", (e)=>{
+        if (primerNumero){
+        numero1.push(8);
+        }else if (segundoNumero){
+        numero2.push(8);    
+        }
+    });$nueve.addEventListener("click", (e)=>{
+        if (primerNumero){
+        numero1.push(9);
+        }else if (segundoNumero){
+        numero2.push(9);    
+        }
+    });$cero.addEventListener("click", (e)=>{
+        if (primerNumero){
+        numero1.push(0);
+        }else if (segundoNumero){
+        numero2.push(0);    
+        }
     });
-    
-
-console.log(numero1);
-console.log("final");
+//Escucho los botones de operaciones    
+$suma.addEventListener("click",(e)=>{
+    operacion = "+";
+    primerNumero= false;
+    segundoNumero = true ;
+});   
+$resta.addEventListener("click",(e)=>{
+    operacion = "-";
+    primerNumero = false;
+    segundoNumero = true ;
+});  $multiplicacion.addEventListener("click",(e)=>{
+    operacion = "*";
+    primerNumero = false;
+    segundoNumero = true ;
+});  $division.addEventListener("click",(e)=>{
+    operacion = "/";
+    primerNumero = false;
+    segundoNumero = true ;
+});  
+$igual.addEventListener("click",(e)=>{
+    primerNumero = true;
+    segundoNumero = false;
+    resultado = calcular(numero1,numero2,operacion);
+    $pantalla.innerText =`${resultado}`; 
+}); 
