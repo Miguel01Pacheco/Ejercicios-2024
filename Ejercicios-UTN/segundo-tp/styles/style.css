@@ -36,7 +36,35 @@ body {
     max-width: 800px;
     margin: 0 auto;
   }
-  
+  .characters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Estilos grilla y cards de personajes*/
+  .grid {
+    background-color: #343a40;
+    display: grid;
+    grid-template-columns:1fr 1fr ;
+    gap: 20px;
+    padding:20px ;
+    max-width: 800px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: wheat;
+    border-radius: 15px;
+    width: 300px;
+
+  }
+  .image {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+  }
   footer {
     background-color: #343a40;
     color: white;
