@@ -1,24 +1,40 @@
 //Referencio el div de mi HTML necesario para agregar mi contenido dinámico.
 const $grid = document.querySelector(".grid");
 //Funcion para poner "Si" en caso de true o "No"en caso de false.
-function siOno(valor){
+function esMago(valor){
     if(valor){
-        return "Si";
+        return "Es mago";
     }else{
-        return "No";
+        return "No es mago";
     }
 }
 //Funcion para reemplazar la imagen vacia por una por defecto.
-function imageOk(valor){
-    if(valor ==="" && valor ==="male"){
-        return "https://notion-avatar.vercel.app/api/img/eyJmYWNlIjoxNCwibm9zZSI6NywibW91dGgiOjE5LCJleWVzIjo3LCJleWVicm93cyI6MywiZ2xhc3NlcyI6MywiaGFpciI6MzMsImFjY2Vzc29yaWVzIjowLCJkZXRhaWxzIjowLCJiZWFyZCI6MCwiZmxpcCI6MSwiY29sb3IiOiJyZ2JhKDI1NSwgMCwgMCwgMCkiLCJzaGFwZSI6Im5vbmUifQ==";
-    }else if (valor ==="" && valor ==="female"){
-        return "https://notion-avatar.vercel.app/api/img/eyJmYWNlIjowLCJub3NlIjoxMCwibW91dGgiOjE2LCJleWVzIjoyLCJleWVicm93cyI6MTUsImdsYXNzZXMiOjksImhhaXIiOjI5LCJhY2Nlc3NvcmllcyI6MCwiZGV0YWlscyI6MCwiYmVhcmQiOjAsImZsaXAiOjAsImNvbG9yIjoicmdiYSgyNTUsIDAsIDAsIDApIiwic2hhcGUiOiJub25lIn0=";
+function imageOk(valor,valor2){
+    if(valor ==="" && valor2 ==="male"){
+        return "../assets/hombreDefault.jpeg";
+    }else if (valor ==="" && valor2 ==="female"){
+        return "../assets/mujerDefault.jpeg";
+    }else if (valor ==="" && valor2 ===""){
+      return "../assets/genericaDefault.jpeg"
     }
 
         return valor;
     
 }
+//Funcion para cambiar de clase segun la casa del personaje.
+function house(valor){
+  if(valor ==="Gryffindor"){
+    return "Gryffindor";
+  }else if (valor === "Slytherin"){
+    return "Slytherin";
+  }else if (valor === "Ravenclaw"){
+    return  "Ravenclaw";
+  }else if (valor === "Hufflepuff"){
+    return "Hufflepuff";
+  }
+  return valor;
+}
+
 //Mediante un fecth obtengo los datos desde la API de Harry Pother.
 fetch("https://hp-api.onrender.com/api/characters")
   .then((respuesta) => {
@@ -42,11 +58,11 @@ let contenidoHtml =[];
     personajes.forEach((personaje) => {
       contenidoHtml +=
      `<div class= "card">
-      <h4 class="titulo">${personaje.name}</h4>
-      <img  class="image" src=${imageOk(personaje.image)} alt="imagen de ${personaje.name}">
-      <p class = "house" >Casa: ${personaje.house}</p>
-      <p  class ="ancestry">Ancestros: ${personaje.ancestry}</p>
-      <p class ="wizard">Es mago?: ${siOno(personaje.wizard)}</p>
+      <h1 class="titulo">${personaje.name}</h1>
+      <img  class="image" src="${imageOk(personaje.image,personaje.gender)}" alt="imagen de ${personaje.name}">
+      <p class = "${house(personaje.house)}" > ${house(personaje.house)}</p>
+      <p  class ="ancestry">${personaje.ancestry}</p>
+      <p class ="wizard">${esMago(personaje.wizard)}</p>
       </div>
       `;
     });
