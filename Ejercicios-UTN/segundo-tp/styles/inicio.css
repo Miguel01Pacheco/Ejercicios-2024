@@ -1,16 +1,17 @@
 .cont-img {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 800px;
-    height: 630px;
+    width: 900px;
+    height: 640px;
     margin: auto;
     overflow: hidden;
 }
 
 .gri {
     background:radial-gradient(circle, orange,orangered);
-    border: 3px solid black;
+    border:none;
     width: 0px;
     height: 100%;
     padding: 5%;
@@ -22,11 +23,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: start;
 }
 .gri img {
     width: 350px;;
     height: 350px;
+    margin-bottom: 5%;
 }
 .cont-img .gri:hover  {
     cursor:crosshair;
@@ -37,7 +39,7 @@
 
 .sli{
     background:radial-gradient(circle, rgb(82, 227, 82),green);
-    border: 3px solid black;
+    border: none;
     width: 0px;
     height: 100%;
     padding: 5%;
@@ -49,11 +51,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: start;
 }
 .sli img {
     width: 350px;;
     height: 350px;
+    margin-bottom: 5%;
 }
 .cont-img .sli:hover  {
     cursor:crosshair;
@@ -64,7 +67,7 @@
 
 .rav {
     background:radial-gradient(circle,rgb(0, 85, 255),blue);
-    border: 3px solid black;
+    border: none;
     width: 0px;
     height: 100%;
     padding: 5%;
@@ -76,12 +79,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: start;
 
 }
 .rav img {
     width: 350px;;
     height: 350px;
+    margin-bottom: 5%;
 }
 .cont-img .rav:hover  {
     cursor:crosshair;
@@ -92,7 +96,7 @@
 
 .huf {
     background:radial-gradient(circle,yellow,rgb(255, 234, 0));
-    border: 3px solid black;
+    border: none;
     width: 0px;
     height: 100%;
     padding: 5%;
@@ -104,11 +108,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: start;
 }
 .huf img {
     width: 350px;;
     height: 350px;
+    margin-bottom: 5%;
 }
 .cont-img .huf:hover  {
     cursor:crosshair;
